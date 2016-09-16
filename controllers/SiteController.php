@@ -11,7 +11,7 @@ class SiteController extends Controller
     public function actionIndex()
     {
     	$output = \Yii::$app->output;
-    	Event::trigger($output::className(),output::EVENT_OUTPUT);
+//    	Event::trigger($output::className(),output::EVENT_OUTPUT);
     }
 
     public function actionDi()
