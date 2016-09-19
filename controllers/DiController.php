@@ -18,6 +18,12 @@ class DiController extends Controller
         $clsb = \Yii::$container->get('app\userclass\di\clsb');
         $clsb->func('abcde');
     }
+
+    public function actionTest()
+    {
+        echo 'Di/Test';
+    }
+
 }
 
 /*

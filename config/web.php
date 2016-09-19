@@ -44,14 +44,17 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'routeA' => 'route/a',
+                'routeB/<arg:\d+>' => 'route/b',
+                '<controller:(route)>/<action:(a|b)>' => '<controller>/c',
+                'POST routeC' => 'route/post',
+                'GET routeC' => 'route/get',
             ],
         ],
-        */
     ],
     'params' => $params,
 
