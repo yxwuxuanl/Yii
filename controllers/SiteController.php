@@ -2,8 +2,7 @@
 
 namespace app\controllers;
 use yii\web\Controller;
-use yii\di\Container;
-use app\commands\NoCsrf;
+use app\behaviors\NoCsrf;
 
 class SiteController extends Controller
 {
@@ -12,16 +11,10 @@ class SiteController extends Controller
         print_r(\Yii::$app->request->post());
     }
 
-    public function actionDi()
+    public function behaviors()
     {
-        $container = new Container();
-        $container->set('app\userclass\di\inter',['class' => 'app\userclass\di\children']);
-        $container->set('demo','app\userclass\di\parents');
-        $parents = $container->get('demo');
-    }
-
-    public function behaviors() 
-    {
-        return [NoCsrf::className()];
+        return [
+            NoCsrf::className(),
+        ];
     }
 }
